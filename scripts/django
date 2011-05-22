@@ -3,18 +3,28 @@
 import os
 import sys
 
-ALIASES = [
-    ('r', 'runserver'),
-    ('s', 'shell'),
-]
+ALIASES = {
+    'r': 'runserver',
+    's': 'shell'
+}
 
-try:
-    command = sys.argv[1]
-except IndexError:
-    os.system('%s manage.py' % sys.executable)
-else:
-    for alias in ALIASES:
-        if alias[0] == command:
-            command = alias[1]
-
-    os.system('%s manage.py %s %s' % (sys.executable, command, ' '.join(sys.argv[2:])))
+def run(commands):
+    """
+    Run manage.py with the given commands.
+    
+    Parameters:
+    commands -- A list of commands.
+    """
+    
+    if commands and commands[0] in ALIASES:
+        commands[0] = ALIASES[commands[0]]
+    
+    script_path = '%s/manage.py' % os.getcwd()
+    while not os.path.exists(script_path):
+        script_path_components = script_path.split(os.sep)
+        script_path_components.pop(-2)
+        script_path = os.sep.join(script_path_components)
+    
+    os.system('%s %s %s' % (sys.executable, script_path, ' '.join(commands)))
+    
+run(sys.argv[1:])
