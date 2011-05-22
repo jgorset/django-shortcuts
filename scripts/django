@@ -11,20 +11,20 @@ ALIASES = {
 def run(commands):
     """
     Run manage.py with the given commands.
-    
+
     Parameters:
     commands -- A list of commands.
     """
-    
+
     if commands and commands[0] in ALIASES:
         commands[0] = ALIASES[commands[0]]
-    
+
     script_path = '%s/manage.py' % os.getcwd()
     while not os.path.exists(script_path):
         script_path_components = script_path.split(os.sep)
         script_path_components.pop(-2)
         script_path = os.sep.join(script_path_components)
-    
+
     os.system('%s %s %s' % (sys.executable, script_path, ' '.join(commands)))
-    
+
 run(sys.argv[1:])
