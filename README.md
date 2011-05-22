@@ -2,7 +2,7 @@
 
 ## About
 
-Ruby on Rails-like shortcuts for Django.
+You spend way too much time typing `python manage.py [...]`.
 
 ## Usage
 
