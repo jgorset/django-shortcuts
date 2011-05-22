@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
   name = 'django-shortcuts',
-  version = '0.1.1',
+  version = '0.2',
   description = "Ruby on Rails-like shortcuts for Django.",
   author = "Johannes Gorset",
   author_email = "jgorset@gmail.com",
