@@ -13,10 +13,10 @@ ALIASES = [
 try:
     command = sys.argv[1]
 except IndexError:
-    subprocess.call([sys.executable, 'manage.py'], cwd=os.getcwd())
+    os.system('%s manage.py' % sys.executable)
 else:
     for alias in ALIASES:
         if alias[0] == command:
             command = alias[1]
 
-    subprocess.call([sys.executable, 'manage.py', command] + sys.argv[2:], cwd=os.getcwd())
+    os.system('%s manage.py %s %s' % (sys.executable, command, ' '.join(sys.argv[2:])))
