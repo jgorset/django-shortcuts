@@ -13,6 +13,9 @@ Ruby on Rails-like shortcuts for Django.
     $ python manage.py shell
     $ django shell
     $ django s
+    
+    $ cd any/project/subdirectory
+    $ django s
 
 ## Installation
 
