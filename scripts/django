@@ -4,8 +4,11 @@ import os
 import sys
 
 ALIASES = {
+    'm': 'migrate',
     'r': 'runserver',
-    's': 'shell'
+    's': 'shell',
+    'sd' : 'syncdb',
+    'sm' : 'schemamigration'
 }
 
 def run(commands):
