@@ -6,6 +6,7 @@ import sys
 ALIASES = {
     'm' : 'migrate',
     'r' : 'runserver',
+    'd' : 'dbshell',
     's' : 'shell',
     'sd': 'syncdb',
     'sm': 'schemamigration',

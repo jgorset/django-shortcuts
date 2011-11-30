@@ -23,6 +23,7 @@ You spend way too much time typing `python manage.py [...]`.
 
     * python manage.py runserver -> django r
     * python manage.py shell -> django s
+    * python manage.py dbshell -> django d
     * python manage.py syncdb -> django sd
     * python manage.py schemamigration [...] -> django sm [...]
     * python.manage.py migrate [...] -> django m [...]
