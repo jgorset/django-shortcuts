@@ -16,8 +16,6 @@ You spend way too much time typing `python manage.py [...]`.
     
     $ cd any/project/subdirectory
     $ django s
-    
-    $ django t
 
 ## Shortcuts
 
@@ -26,8 +24,8 @@ You spend way too much time typing `python manage.py [...]`.
     * python manage.py dbshell -> django d
     * python manage.py syncdb -> django sd
     * python manage.py schemamigration [...] -> django sm [...]
-    * python.manage.py migrate [...] -> django m [...]
-    * python.manage.py test [...] -> django t [...]
+    * python manage.py migrate [...] -> django m [...]
+    * python manage.py test [...] -> django t [...]
 
 ## Installation
 
