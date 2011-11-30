@@ -2,6 +2,7 @@
 
 import os
 import sys
+import commands as commands_module
 
 ALIASES = {
     'm' : 'migrate',
@@ -10,7 +11,8 @@ ALIASES = {
     's' : 'shell',
     'sd': 'syncdb',
     'sm': 'schemamigration',
-    't' : 'test'
+    't' : 'test',
+    'sp': 'startproject'
 }
 
 def run(commands):
@@ -24,7 +26,11 @@ def run(commands):
     if commands and commands[0] in ALIASES:
         commands[0] = ALIASES[commands[0]]
 
-    script_path = '%s/manage.py' % os.getcwd()
+    if commands[0] == 'startproject':
+        script_path = commands_module.getoutput('which django-admin.py')
+    else:
+        script_path = '%s/manage.py' % os.getcwd()
+
     while not os.path.exists(script_path):
         script_path_components = script_path.split(os.sep)
         script_path_components.pop(-2)
