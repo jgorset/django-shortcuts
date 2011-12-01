@@ -26,7 +26,7 @@ def run(commands):
     if commands and commands[0] in ALIASES:
         commands[0] = ALIASES[commands[0]]
 
-    if commands[0] == 'startproject':
+    if commands and commands[0] == 'startproject':
         script_path = commands_module.getoutput('which django-admin.py')
     else:
         script_path = '%s/manage.py' % os.getcwd()
