@@ -5,28 +5,22 @@
 You spend way too much time typing `python manage.py [...]`.
 
 ## Usage
-
-    $ python manage.py runserver
-    $ django runserver
-    $ django r
-
-    $ python manage.py shell
+    
     $ django shell
-    $ django s
-
+    
     $ cd any/project/subdirectory
-    $ django s
+    $ django shell
 
 ## Shortcuts
 
-    * python manage.py runserver -> django r
-    * python manage.py shell -> django s
-    * python manage.py dbshell -> django d
-    * python manage.py syncdb -> django sd
-    * python manage.py schemamigration [...] -> django sm [...]
-    * python manage.py migrate [...] -> django m [...]
-    * python manage.py test [...] -> django t [...]
-    * django-admin.py startproject [...] -> django sp [...]
+* `r` = `runserver`
+* `s` = `shell`
+* `schemamigration` = `sm`
+* `migrate` = `m`
+* `test` = `t`
+* `dbshell` = `d`
+* `syncdb` = `sd`
+* `startproject` = `sp`
 
 ## Installation
 
