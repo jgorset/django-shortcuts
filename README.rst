@@ -1,27 +1,34 @@
 Django shortcuts
 ================
 
-You spend way too much time typing `python manage.py [...]`.
+You spend too much time typing ``python manage.py``.
 
 Usage
 -----
-    
-    $ django shell
-    
+
+Django shortcuts installs a ``django`` binary that proxies
+Django's ``manage.py`` and ``django-admin.py`` scripts.
+
+::
+
+    $ django <command or shortcut>
+
     $ cd any/project/subdirectory
-    $ django shell
+    $ django <command or shortcut>
 
 Shortcuts
 ---------
 
-* `r` = `runserver`
-* `s` = `shell`
-* `schemamigration` = `sm`
-* `migrate` = `m`
-* `test` = `t`
-* `dbshell` = `d`
-* `syncdb` = `sd`
-* `startproject` = `sp`
+::
+
+    r     ->    runserver
+    s     ->    shell
+    t     ->    test
+    sm    ->    schemamigration
+    m     ->    migrate
+    sd    ->    syncdb
+    d     ->    dbshell
+    sp    ->    startproject
 
 Installation
 ------------
