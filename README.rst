@@ -1,17 +1,18 @@
-# Django shortcuts
-
-## About
+Django shortcuts
+================
 
 You spend way too much time typing `python manage.py [...]`.
 
-## Usage
+Usage
+-----
     
     $ django shell
     
     $ cd any/project/subdirectory
     $ django shell
 
-## Shortcuts
+Shortcuts
+---------
 
 * `r` = `runserver`
 * `s` = `shell`
@@ -22,6 +23,9 @@ You spend way too much time typing `python manage.py [...]`.
 * `syncdb` = `sd`
 * `startproject` = `sp`
 
-## Installation
+Installation
+------------
+
+::
 
     $ pip install django-shortcuts
