@@ -1,2 +1,4 @@
 setup.py
 scripts/django
+README.rst
+LICENSE
