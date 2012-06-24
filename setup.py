@@ -1,6 +1,6 @@
 from distutils.core import setup
 
-readme = open('README.rst')
+readme = open('README.rst').read()
 
 setup(
     name = 'django-shortcuts',
