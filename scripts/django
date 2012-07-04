@@ -28,6 +28,15 @@ ALIASES = {
     # Haystack
     'ix' : 'update_index',
     'rix': 'rebuild_index',
+    
+    # Django Extensions
+    'sk' : 'generate_secret_key',
+    'rdb': 'reset_db',
+    'rp' : 'runserver_plus',
+    'sp' : 'shell_plus',
+    'url': 'show_urls',
+    'gm' : 'graph_models',
+    'rs' : 'runscript'
 }
 
 def run(command=None, *arguments):
