@@ -24,6 +24,10 @@ ALIASES = {
     # South
     'm'  : 'migrate',
     'sm' : 'schemamigration',
+    
+    # Haystack
+    'ix' : 'update_index',
+    'rix': 'rebuild_index',
 }
 
 def run(command=None, *arguments):
