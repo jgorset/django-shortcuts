@@ -5,14 +5,25 @@ import sys
 from subprocess import call
 
 ALIASES = {
-    'm' : 'migrate',
-    'r' : 'runserver',
-    'd' : 'dbshell',
-    's' : 'shell',
-    'sd': 'syncdb',
-    'sm': 'schemamigration',
-    't' : 'test',
-    'sp': 'startproject'
+    # Django
+    'c'  : 'collectstatic',
+    'r'  : 'runserver',
+    'sd' : 'syncdb',
+    'sp' : 'startproject',
+    'sa' : 'startapp',
+    't'  : 'test',
+    
+    # Shell
+    'd'  : 'dbshell',
+    's'  : 'shell',
+    
+    # Auth
+    'csu': 'createsuperuser'
+    'cpw': 'changepassword',
+    
+    # South
+    'm'  : 'migrate',
+    'sm' : 'schemamigration',
 }
 
 def run(command=None, *arguments):
