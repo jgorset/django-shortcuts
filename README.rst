@@ -16,19 +16,53 @@ Django's ``manage.py`` and ``django-admin.py`` scripts.
     $ cd any/project/subdirectory
     $ django <command or shortcut>
 
+Requirements
+------------
+
+Some commands require additional packages
+
++ South
++ Haystack
++ Django Command Extensions
+
+
 Shortcuts
 ---------
 
 ::
 
-    r     ->    runserver
-    s     ->    shell
-    t     ->    test
-    sm    ->    schemamigration
-    m     ->    migrate
-    sd    ->    syncdb
-    d     ->    dbshell
-    sp    ->    startproject
+    # Django
+    'c'  : 'collectstatic',
+    'r'  : 'runserver',
+    'sd' : 'syncdb',
+    'sp' : 'startproject',
+    'sa' : 'startapp',
+    't'  : 'test',
+    
+    # Shell
+    'd'  : 'dbshell',
+    's'  : 'shell',
+    
+    # Auth
+    'csu': 'createsuperuser',
+    'cpw': 'changepassword',
+    
+    # South
+    'm'  : 'migrate',
+    'sm' : 'schemamigration',
+    
+    # Haystack
+    'ix' : 'update_index',
+    'rix': 'rebuild_index',
+    
+    # Django Extensions
+    'sk' : 'generate_secret_key',
+    'rdb': 'reset_db',
+    'rp' : 'runserver_plus',
+    'shp': 'shell_plus',
+    'url': 'show_urls',
+    'gm' : 'graph_models',
+    'rs' : 'runscript'
 
 Installation
 ------------

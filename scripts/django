@@ -5,14 +5,38 @@ import sys
 from subprocess import call
 
 ALIASES = {
-    'm' : 'migrate',
-    'r' : 'runserver',
-    'd' : 'dbshell',
-    's' : 'shell',
-    'sd': 'syncdb',
-    'sm': 'schemamigration',
-    't' : 'test',
-    'sp': 'startproject'
+    # Django
+    'c'  : 'collectstatic',
+    'r'  : 'runserver',
+    'sd' : 'syncdb',
+    'sp' : 'startproject',
+    'sa' : 'startapp',
+    't'  : 'test',
+    
+    # Shell
+    'd'  : 'dbshell',
+    's'  : 'shell',
+    
+    # Auth
+    'csu': 'createsuperuser',
+    'cpw': 'changepassword',
+    
+    # South
+    'm'  : 'migrate',
+    'sm' : 'schemamigration',
+    
+    # Haystack
+    'ix' : 'update_index',
+    'rix': 'rebuild_index',
+    
+    # Django Extensions
+    'sk' : 'generate_secret_key',
+    'rdb': 'reset_db',
+    'rp' : 'runserver_plus',
+    'shp': 'shell_plus',
+    'url': 'show_urls',
+    'gm' : 'graph_models',
+    'rs' : 'runscript'
 }
 
 def run(command=None, *arguments):
@@ -24,7 +48,7 @@ def run(command=None, *arguments):
     :param arguments: A list of strings describing arguments to the command.
     """
 
-    if command == 'startproject':
+    if command == 'startproject' or ALIASES[command] == 'startproject':
         return call('django-admin.py startproject %s' % ' '.join(arguments), shell=True)
 
     if command and command in ALIASES:
