@@ -33,7 +33,7 @@ ALIASES = {
     'sk' : 'generate_secret_key',
     'rdb': 'reset_db',
     'rp' : 'runserver_plus',
-    'sp' : 'shell_plus',
+    'shp': 'shell_plus',
     'url': 'show_urls',
     'gm' : 'graph_models',
     'rs' : 'runscript'
@@ -48,7 +48,7 @@ def run(command=None, *arguments):
     :param arguments: A list of strings describing arguments to the command.
     """
 
-    if command == 'startproject':
+    if command == 'startproject' or ALIASES[command] == 'startproject':
         return call('django-admin.py startproject %s' % ' '.join(arguments), shell=True)
 
     if command and command in ALIASES:
