@@ -68,4 +68,10 @@ def run(command=None, *arguments):
         'arguments': ' '.join(arguments)
     }, shell=True)
 
-run(*sys.argv[1:])
+
+def main():
+    """Entry-point function."""
+    run(*sys.argv[1:])
+
+if __name__ == '__main__':
+    main()

@@ -1,4 +1,7 @@
-from distutils.core import setup
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+
+from setuptools import setup
 
 readme = open('README.rst').read()
 
@@ -10,7 +13,7 @@ setup(
     author = "Johannes Gorset",
     author_email = "jgorset@gmail.com",
     url = "http://github.com/jgorset/django-shortcuts",
-    scripts = ['scripts/django'],
+    py_modules = ['django_shortcuts'],
     classifiers = [
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
@@ -19,5 +22,10 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7'
-    ]
+    ],
+    entry_points={
+        'console_scripts': [
+            'django = django_shortcuts:main',
+        ]
+    },
 )

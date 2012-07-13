@@ -1,3 +1,2 @@
-include scripts/django
 include README.rst
 include LICENSE
