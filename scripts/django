@@ -54,16 +54,17 @@ def run(command=None, *arguments):
     if command and command in ALIASES:
         command = ALIASES[command]
 
-    script_path = os.getcwd().split(os.sep)
-    while not os.path.exists('/%s/manage.py' % os.sep.join(script_path)):
-        try:
-            script_path.pop()
-        except IndexError:
+    script_path = os.getcwd()
+    while not os.path.exists(os.path.join(script_path, 'manage.py')):
+        base_dir = os.path.dirname(script_path)
+        if base_dir != script_path:
+            script_path = base_dir
+        else:
             sys.exit('django-shortcuts: No \'manage.py\' script found in this directory or its parents.')
 
     call('%(python)s %(script_path)s %(command)s %(arguments)s' % {
         'python': sys.executable,
-        'script_path': '/%s/manage.py' % os.path.join(*script_path),
+        'script_path': os.path.join(script_path, 'manage.py'),
         'command': command or '',
         'arguments': ' '.join(arguments)
     }, shell=True)
