@@ -12,23 +12,23 @@ ALIASES = {
     'sp' : 'startproject',
     'sa' : 'startapp',
     't'  : 'test',
-    
+
     # Shell
     'd'  : 'dbshell',
     's'  : 'shell',
-    
+
     # Auth
     'csu': 'createsuperuser',
     'cpw': 'changepassword',
-    
+
     # South
     'm'  : 'migrate',
     'sm' : 'schemamigration',
-    
+
     # Haystack
     'ix' : 'update_index',
     'rix': 'rebuild_index',
-    
+
     # Django Extensions
     'sk' : 'generate_secret_key',
     'rdb': 'reset_db',
@@ -50,6 +50,9 @@ def run(command=None, *arguments):
 
     if command == 'startproject' or ALIASES[command] == 'startproject':
         return call('django-admin.py startproject %s' % ' '.join(arguments), shell=True)
+    elif command is None:
+        sys.exit('django-shortcuts: No argument was supplied, please specify one.')
+
 
     if command and command in ALIASES:
         command = ALIASES[command]
