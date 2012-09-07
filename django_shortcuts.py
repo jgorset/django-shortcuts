@@ -39,6 +39,7 @@ ALIASES = {
     'rs' : 'runscript'
 }
 
+
 def run(command=None, *arguments):
     """
     Run the given command.
@@ -48,14 +49,14 @@ def run(command=None, *arguments):
     :param arguments: A list of strings describing arguments to the command.
     """
 
-    if command == 'startproject' or ALIASES[command] == 'startproject':
-        return call('django-admin.py startproject %s' % ' '.join(arguments), shell=True)
-    elif command is None:
+    if command is None:
         sys.exit('django-shortcuts: No argument was supplied, please specify one.')
 
-
-    if command and command in ALIASES:
+    if command in ALIASES:
         command = ALIASES[command]
+
+    if command == 'startproject':
+        return call('django-admin.py startproject %s' % ' '.join(arguments), shell=True)
 
     script_path = os.getcwd()
     while not os.path.exists(os.path.join(script_path, 'manage.py')):
