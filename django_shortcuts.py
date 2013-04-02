@@ -24,6 +24,7 @@ ALIASES = {
     # South
     'm'  : 'migrate',
     'sm' : 'schemamigration',
+    'dm' : 'datamigration',
 
     # Haystack
     'ix' : 'update_index',
