@@ -67,7 +67,7 @@ def run(command=None, *arguments):
         else:
             sys.exit('django-shortcuts: No \'manage.py\' script found in this directory or its parents.')
 
-    call('%(python)s %(script_path)s %(command)s %(arguments)s' % {
+    return call('%(python)s %(script_path)s %(command)s %(arguments)s' % {
         'python': sys.executable,
         'script_path': os.path.join(script_path, 'manage.py'),
         'command': command or '',
@@ -77,7 +77,7 @@ def run(command=None, *arguments):
 
 def main():
     """Entry-point function."""
-    run(*sys.argv[1:])
+    sys.exit(run(*sys.argv[1:]))
 
 if __name__ == '__main__':
     main()
