@@ -7,7 +7,7 @@ readme = open('README.rst').read()
 
 setup(
     name = 'django-shortcuts',
-    version = '1.5',
+    version = '1.6',
     description = "You spend way too much time typing 'python manage.py'",
     long_description = readme,
     author = "Johannes Gorset",
