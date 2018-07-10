@@ -38,23 +38,25 @@ Shortcuts
     'sp' : 'startproject',
     'sa' : 'startapp',
     't'  : 'test',
-    
+
     # Shell
     'd'  : 'dbshell',
     's'  : 'shell',
-    
+
     # Auth
     'csu': 'createsuperuser',
     'cpw': 'changepassword',
-    
+
     # South
     'm'  : 'migrate',
+    'mm' : 'makemigrations',
     'sm' : 'schemamigration',
-    
+    'dm' : 'datamigration',
+
     # Haystack
     'ix' : 'update_index',
     'rix': 'rebuild_index',
-    
+
     # Django Extensions
     'sk' : 'generate_secret_key',
     'rdb': 'reset_db',
